@@ -1,0 +1,29 @@
+{
+  "name": "tfg",
+  "version": "1.0.0",
+  "description": "Login - create training - My training sessions (Html5 - Tailwind - JQuery)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adrianncatalan/TFG.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adrianncatalan/TFG/issues"
+  },
+  "homepage": "https://github.com/adrianncatalan/TFG#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "express": "^4.17.3"
+  }
+}

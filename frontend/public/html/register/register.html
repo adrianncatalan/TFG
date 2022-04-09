@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KeepFit - Register</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../../../backend/services/register/register.js"></script>
 </head>
 
 <body>
@@ -43,11 +44,11 @@
                 </p>
             </div>
             <div class="mt-12">
-                <form action="#" method="POST" class="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
+                <div class="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
                     <div>
-                        <label for="first-name" class="block text-sm font-medium text-gray-700">First name</label>
+                        <label for="first-name" class="block text-sm font-medium text-gray-700">Name</label>
                         <div class="mt-1">
-                            <input type="text" name="first-name" id="first-name" autocomplete="given-name"
+                            <input type="text" name="name" id="name" autocomplete="given-name"
                                 maxlength="20" placeholder="Enter your first name"
                                 class="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md">
                         </div>
@@ -63,7 +64,7 @@
                     <div>
                         <label for="age" class="block text-sm font-medium text-gray-700">Age</label>
                         <div class="mt-1">
-                            <input type="text" name="age" id="age" autocomplete="family-name" maxlength="3"
+                            <input type="number" name="age" id="age" autocomplete="family-name"
                                 placeholder="Enter your age"
                                 class="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md">
                         </div>
@@ -73,7 +74,7 @@
                         <div class="mt-1">
                             <select name="gender" id="gender"
                                 class="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md">
-                                <option value="Male">Male</option>
+                                <option selected value="Male">Male</option>
                                 <option value="Female">Female</option>
                             </select>
                         </div>
@@ -82,7 +83,7 @@
                     <div>
                         <label for="last-name" class="block text-sm font-medium text-gray-700">Height</label>
                         <div class="mt-1">
-                            <input type="text" name="height" id="height" autocomplete="family-name" maxlength="4"
+                            <input type="number" name="height" id="height" autocomplete="family-name"
                                 placeholder="Enter your height"
                                 class="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md">
                         </div>
@@ -91,7 +92,7 @@
                     <div>
                         <label for="last-name" class="block text-sm font-medium text-gray-700">Weight</label>
                         <div class="mt-1">
-                            <input type="text" name="Weight" id="Weight" autocomplete="family-name" maxlength="4"
+                            <input type="number" name="weight" id="weight" autocomplete="family-name"
                                 placeholder="Enter your weight"
                                 class="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md">
                         </div>
@@ -105,13 +106,27 @@
                                 class="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md">
                         </div>
                     </div>
-
-
                     <div class="sm:col-span-2">
-                        <label for="email" class="block text-sm font-medium text-gray-700">Phone number</label>
+                        <label for="phone number" class="block text-sm font-medium text-gray-700">Phone number</label>
                         <div class="mt-1">
-                            <input id="email" name="text" type="text" autocomplete="email"
+                            <input id="phone" name="phone" type="tel" autocomplete="tel"
                                 placeholder="Enter your phone number" maxlength="15"
+                                class="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md">
+                        </div>
+                    </div>
+                    <div class="sm:col-span-2">
+                        <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                        <div class="mt-1">
+                            <input id="password" name="password" type="password" autocomplete="new-password"
+                                placeholder="Enter your new password" maxlength="15"
+                                class="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md">
+                        </div>
+                    </div>
+                    <div class="sm:col-span-2">
+                        <label for="verify-password" class="block text-sm font-medium text-gray-700">Verify password</label>
+                        <div class="mt-1">
+                            <input id="verify-password" name="verifypassword" type="password" autocomplete="new-password"
+                                placeholder="Verify password" maxlength="15"
                                 class="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md">
                         </div>
                     </div>
@@ -128,12 +143,12 @@
                         </div>
                     </div>
                     <div class="sm:col-span-2">
-                        <button type="submit"
+                        <button id="btn-register" type="submit"
                             class="w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                             Register
                         </button>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
     </div>
