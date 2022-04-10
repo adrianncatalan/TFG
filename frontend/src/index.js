@@ -1,12 +1,12 @@
 //Conexion bbdd
-const conection = require('./backend/dataBase/conection.js').dataBaseConnection();
+const conection = require('../../backend/dataBase/connection.js').dataBaseConnection();
 
 //He guardado en las dependencias para las peticiones, respuestas y analítica en constantes
 const express = require('express');
 const app = express();
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
-const cors = require('./node_modules/cors');
+const cors = require('cors');
 
 //Usamos nuestra conexión a la base de datos y al mismo tiempo usamos Body-Parser para ejecutar futuras consultas y nos devuelvan las respuestas en formato Json
 app.use(bodyParser.json());
@@ -31,8 +31,9 @@ app.use(cors());
 
 //Requiriendo todos lo ficheros que permiten realizar consultas, modificaciones, actualizaciones y supresiones de los users
 
-const register = require('./backend/middleware/register/register.js').register;
+const register = require('../../backend/middleware/register/register.js').register;
 
 //Creando los endpoints de los usuarios para poder realizar las peticiones
 
 app.post('/register', (req, res) => register(req, res, conection));
+

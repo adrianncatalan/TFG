@@ -2,27 +2,15 @@
 const register = (req, res, conection) => {
   const sql = "INSERT INTO users SET ?";
 
-  const user_obj = {
-    name: req.body.name,
-    surname: req.body.surname,
-    age: req.body.age,
-    gender: req.body.gender,
-    height: req.body.height,
-    weight: req.body.weight,
-    email: req.body.email,
-    phone: req.body.phone,
-    password: req.body.password,
-  };
+  const bcrypt = require('bcrypt');
+  const bcryptjs = require('bcryptjs')
+  const salt = 10;
 
-console.log(req.body.gender)
+  const userRegister = { id, name, surname, age, gender, height, weight, email, phone, password } = req.body;
 
-  const result = user_obj;
-
-  conection.query(sql, user_obj, (error) => {
+  conection.query(sql, userRegister, (error) => {
     if (error) throw error;
-
     res.send('Usuario creado exitosamente.');
-    // res.json(result);
   });
 };
 
