@@ -4,7 +4,8 @@
   "description": "Login - create training - My training sessions (Html5 - Tailwind - JQuery)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -18,14 +19,10 @@
   },
   "homepage": "https://github.com/adrianncatalan/TFG#readme",
   "dependencies": {
-    "bcrypt": "^5.0.1",
     "bcryptjs": "^2.4.3",
-    "body-parser": "^1.20.0",
     "cors": "^2.8.5",
-    "morgan": "^1.10.0",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
     "mysql": "^2.18.1"
-  },
-  "devDependencies": {
-    "express": "^4.17.3"
   }
 }
