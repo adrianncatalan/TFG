@@ -4,6 +4,9 @@ const express = require('express');
 //Requiero los Cors
 const cors = require('cors');
 
+//Requiero body-parser
+const bodyParser = require('body-parser');
+
 //Me creo una clase y configuro mi servidor
 class Server {
 
@@ -22,6 +25,12 @@ class Server {
     }
 
     middlewares() {
+
+        //Buscar porque hice esto, lo tenía en la api
+        this.app.use(express.urlencoded({ extended: false }));
+        this.app.use(express.json());
+        this.app.use(bodyParser.json());
+        this.app.use(bodyParser.urlencoded({ extended: false }));
 
         //Usando Cors para la protección seguridad del navegador 
         //Los Cors restringen las solicitudes HTTP de origen cruzado

@@ -1,5 +1,5 @@
 //Creamos una función para guardar nuestra conexión de la base de datos
-function dataBaseConnection() {
+function connection() {
 
     //Creamos una constante para hacer un require a la dependencia MySql, ya que nuestra base de datos es de tipo MySql
     const mysql = require('mysql');
@@ -33,4 +33,4 @@ function dataBaseConnection() {
 }
 
 //Exportamos nuestra modulo que contiene la conexión a la base de datos y así puede ser utilizado
-module.exports.dataBaseConnection = dataBaseConnection;
+module.exports.connection = connection;

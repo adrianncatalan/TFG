@@ -1,8 +1,12 @@
 //Requiero Router
-const { Router } = require('express')
+const { Router } = require('express');
 
 //Requiero mis controladores
-const { usersGet, usersPut, usersPost, usersPatch, usersDelete } = require('../controllers/users');
+const { usersGet } = require('../controllers/users/usersGet');
+const { usersPost } = require('../controllers/users/usersPost');
+const { usersPut } = require('../controllers/users/usersPut');
+const { usersPatch } = require('../controllers/users/usersPatch');
+const { usersDelete } = require('../controllers/users/usersDelete');
 
 //Me creo una constante para guardar el método Router y usar sus funcionalidades
 const router = Router();

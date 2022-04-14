@@ -12,7 +12,7 @@ window.addEventListener("load", () => {
         const phone = document.getElementById('phone');
         const password = document.getElementById('password');
 
-        fetch("http://192.168.1.128:3050/register", {
+        fetch("192.168.1.128:8081/users", {
             method: "POST",
             mode: "cors",
             body: JSON.stringify({
