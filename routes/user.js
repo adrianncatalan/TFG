@@ -1,6 +1,9 @@
 //Requiero Router
 const { Router } = require('express');
 
+//Requiero check de Express-validator
+const { check } = require('express-validator');
+
 //Requiero mis controladores
 const { usersGet } = require('../controllers/users/usersGet');
 const { usersPost } = require('../controllers/users/usersPost');
@@ -15,7 +18,13 @@ const router = Router();
 router.get('/', usersGet);
 
 //Endpoint POST
-router.post('/', usersPost);
+router.post('/', [
+    check('email', 'El correo no es válido')
+        .isEmail()
+        .exists()
+        
+         
+], usersPost);
 
 //Endpoint PUT
 //Colocamos un ID para poder saber que tipo de usuario es

@@ -12,45 +12,39 @@ window.addEventListener("load", () => {
         const phone = document.getElementById('phone');
         const password = document.getElementById('password');
 
-    fetch("http://localhost:8081/users", {
-        method: "POST",
-        mode: "cors",
-        body: JSON.stringify({
+        fetch("http://localhost:8081/users", {
+            method: "POST",
+            mode: "cors",
+            body: JSON.stringify({
 
-            name: name.value,
-            surname: surname.value,
-            age: age.value,
-            gender: gender.value,
-            height: height.value,
-            weight: weight.value,
-            email: email.value,
-            phone: phone.value,
-            password: password.value,
+                name: name.value,
+                surname: surname.value,
+                age: age.value,
+                gender: gender.value,
+                height: height.value,
+                weight: weight.value,
+                email: email.value,
+                phone: phone.value,
+                password: password.value,
 
-        }),
+            }),
 
-        headers: {
+            headers: {
 
-            Accept: "application/json",
-            "Content-Type": "application/json",
+                Accept: "application/json",
+                "Content-Type": "application/json",
 
-        },
+            },
+        })
+
+            .then(res => {
+                if (res.ok) {
+                    console.log('Succes');
+                } else {
+                    console.log('Not succes');
+                }
+            })
+            .then(data => console.log(data))
+            .catch(error => console.log(error))
     })
-
-        .then((response) => {
-            if (!response.ok) {
-                throw Error(response.statusText());
-            }
-            return response;
-        })
-        .then((res) => res.json())
-        // .catch((error) => console.error("Error:", error))
-        .catch((error) => {
-            console.log('Error al registrar usuario');
-        })
-        // .then((response) => console.log("Success:", response));
-        .then((response) => {
-            console.log('Usuario registrado')
-        });
-    });
 });

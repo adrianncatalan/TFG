@@ -6,10 +6,23 @@ const { request, response } = require('express');
 //Requerimos nuestro paquete de has de contraseñas bcryptjs
 const bcryptjs = require('bcryptjs');
 
+//Requerimos Express-validator
+const { body, validationResult } = require('express-validator');
+
+//Nombre de la constante que tiene la función
 //Lógica del endpoint POST
-const usersPost = (req = request, res = response, connection) => {
+const usersPost = async (req = request, res = response, connection) => {
+
     //Conexion bbdd
     connection = require('../../dataBase/connection').connection();
+
+    //Creamos una variable constante que guarda todos los errores
+    const errors = validationResult(req);
+
+    //Si hay errores, hago un return de los errores que fueron encontrados por Express-validator
+    if (!errors.isEmpty()) {
+        return res.status(400).json(errors);
+    }
 
     //Inserto en la base datos de la tabla registro_usuarios el nuevo usuario
     const sql = "INSERT INTO users SET ?";
@@ -17,10 +30,8 @@ const usersPost = (req = request, res = response, connection) => {
     //Rescatamos los valores introducidos por el usuario
     const newUser = { name, surname, age, gender, height, weight, email, phone, password } = req.body;
 
-    //Aquí debemos verificar si el email ya existe
-
-
-
+    //Verificar si el email existe
+    
 
 
     
@@ -28,8 +39,8 @@ const usersPost = (req = request, res = response, connection) => {
     const salt = bcryptjs.genSaltSync(); //Asignamos a esta variable el número de vueltas de hash(Valor por defecto 10)
     newUser.password = bcryptjs.hashSync(password, salt); //Hasheamos la contraseña antes guardar al usuario en la base de datos
 
-    //Obtengo por medio de la desestrucuturación datos específicos del body
-    connection.query(sql, newUser, (error) => {
+    //Inserto en la base de datos el nuevo usuario
+    await connection.query(sql, newUser, (error) => {
         if (error) throw error;
         res.send('Usuario creado exitosamente.');
     });

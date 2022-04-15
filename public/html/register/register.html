@@ -43,8 +43,8 @@
                     training plans, nutrition and you can create and customize training sessions.
                 </p>
             </div>
-            <div class="mt-12">
-                <div class="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
+            <divclass="mt-12">
+                <form action="../../../controllers/users/usersPost.js" method="POST" class="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
                     <div>
                         <label for="first-name" class="block text-sm font-medium text-gray-700">Name</label>
                         <div class="mt-1">
@@ -57,7 +57,7 @@
                         <label for="last-name" class="block text-sm font-medium text-gray-700">Surname</label>
                         <div class="mt-1">
                             <input type="text" name="surname" id="surname" autocomplete="family-name" maxlength="20"
-                                placeholder="Enter your surname"
+                                placeholder="Enter your surname" 
                                 class="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md">
                         </div>
                     </div>
@@ -74,26 +74,27 @@
                         <div class="mt-1">
                             <select name="gender" id="gender"
                                 class="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md">
-                                <option selected value="Male">Male</option>
+                                <option selected value="None">None</option>
+                                <option value="Male">Male</option>
                                 <option value="Female">Female</option>
                             </select>
                         </div>
                     </div>
 
                     <div>
-                        <label for="last-name" class="block text-sm font-medium text-gray-700">Height</label>
+                        <label for="last-name" class="block text-sm font-medium text-gray-700">Height (cm)</label>
                         <div class="mt-1">
-                            <input type="number" name="height" id="height" autocomplete="family-name"
-                                placeholder="Enter your height"
+                            <input type="text" name="height" id="height" autocomplete="family-name"
+                                placeholder="Enter your height" maxlength="4"
                                 class="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md">
                         </div>
                     </div>
 
                     <div>
-                        <label for="last-name" class="block text-sm font-medium text-gray-700">Weight</label>
+                        <label for="last-name" class="block text-sm font-medium text-gray-700">Weight (kg)</label>
                         <div class="mt-1">
-                            <input type="number" name="weight" id="weight" autocomplete="family-name"
-                                placeholder="Enter your weight"
+                            <input type="text" name="weight" id="weight" autocomplete="family-name"
+                                placeholder="Enter your weight" maxlength="5"
                                 class="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md">
                         </div>
                     </div>
@@ -149,12 +150,11 @@
                         <!-- <a href="../login/login.html"> -->
                         <button id="btn-register" type="submit"
                             class="w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-
                             Register
                         </button>
                         <!-- </a> -->
                     </div>
-                </div>
+                </fom>
             </div>
         </div>
     </div>
